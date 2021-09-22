@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1">
+    <title>EPL 통계 사이트</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="author" content="김대욱, 정지은">
+    <meta name="description" content="리버풀 화이팅~!">
+</head>
+
+
+
+<body>
+    <style type="text/css">
+        .jumbotron{
+            background-image: url('https://2020-oss-test.s3.amazonaws.com/emilio-garcia-AWdCgDDedH0-unsplash.jpg');
+            background-size:cover;
+            text-shadow:black 0.2em 0.2em 0.2em;
+            color:white;
+        }
+    </style>
+    <nav class="navbar navbar-default">
+        <div class="contaner-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">EPL 통계 사이트</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/" >프로젝트 소개<span class="sr-only"></span></a></li>
+                    <li class="dropdown"><a href="/TeamStanding" class="dropdown-toggle" data-toggle="dropdown" role="" aria-haspopup="true"
+                        aria-expanded="false">팀 순위</a>
+                        <ul class="dropdown-menu">
+                            <li><a href='#'>Submenu1</a></li>
+                            <li><a href='#'>Submenu2</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="/TopScorers">개인 순위</a></li>
+                    <li><a href="/TeamStat">팀별 통계</a></li>
+                    <li><a href="/PlayerStat">개인별 통계</a></li>
+                    <li><a href="Community.html">자유 게시판</a></li>
+                    
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="내용을 입력하세요.">
+
+                    </div>
+                    <button type="submit" class="btn btn-default">검색</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">접속하기<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="loginForm.html">로그인</a></li>
+                            <li><a href="registerForm.html">회원가입</a></li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div class ="container">
+        <div class="jumbotron">
+            <h1 class="text-center">EPL의 자세한 통계를 보여주는 사이트</h1>
+            <br>
+            <p class="text-center">EPL을 사랑하는 축구인 입장에서 한국어 사용자가 선수들의 디테일한 스탯을 볼 수 있는 사이트를 만들고 싶어 제작했다.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h4>팀 순위</h4>
+            <p>이 사이트는 팀 순위를 다른 데이터와 함께 보여줍니다.</p>
+            <p><a class="btn btn-default" href="/TeamStanding">자세히 알아보기</a></p>
+        </div>
+        <div class="col-md-3">
+            <h4>개인 순위</h4>
+            <p>이 사이트는 개인 순위를 다른 데이터와 함께 보여줍니다.</p>
+            <p><a class="btn btn-default" href="/TopScorers">자세히 알아보기</a></p>
+        </div>
+        <div class="col-md-3">
+            <h4>팀별 통계</h4>
+            <p>이 사이트는 팀 별 통계를 조금 더 자세한 정보들과 함께 보여줍니다.</p>
+            <p><a class="btn btn-default" href="/TeamStat">자세히 알아보기</a></p>
+        </div>
+        <div class="col-md-3">
+            <h4>개인 통계</h4>
+            <p>이 사이트는 개인 별 통계를 조금 더 자세한 정보들과 함께 보여줍니다.</p>
+            <p><a class="btn btn-default" href="/PersonalStat">자세히 알아보기</a></p>
+        </div>
+    </div>
+    <footer style="background-color:#33cc33; color:#ffffff">
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2021.7.28</h5><h5>김대욱, 최재웅</h5></div>
+                <div class="col-sm-4"><h5>작성자 소개</h5><p>저희는 경희대학교 학생입니다.</p></div>
+            </div>
+        </div>
+    </footer>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

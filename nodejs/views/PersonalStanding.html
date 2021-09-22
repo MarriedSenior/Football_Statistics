@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1">
+    <title>EPL 통계 사이트</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="author" content="김대욱, 정지은">
+    <meta name="description" content="리버풀 화이팅~!">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="contaner-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/" >EPL 통계 사이트</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/" >프로젝트 소개<span class="sr-only"></span></a></li>
+                    <li><a href="/TeamStanding">팀 순위</a></li>
+                    <li class="active"><a href="/TopScorers">개인 순위</a></li>
+                    <li><a href="/TeamStat">팀별 통계</a></li>
+                    <li><a href="/PlayerStat">개인별 통계</a></li>
+                    <li><a href="Community.html">자유 게시판</a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="내용을 입력하세요.">
+
+                    </div>
+                    <button type="submit" class="btn btn-default">검색</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">접속하기<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="loginForm.html">로그인</a></li>
+                            <li><a href="registerForm.html">회원가입</a></li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- 
+        테이블 디자인 교체
+    -->
+
+    <table border='1' id="personalStanding" class='table'>
+        <thead>
+          <tr>
+           <th> 선수    </th>
+           <th> 득점    </th>
+           <th> 도움    </th>
+           <th> 슈팅    </th>
+           <th> 파울    </th>
+           <th> 경고    </th>
+           <th> 퇴장    </th>
+           <th> 유효슈팅    </th>
+           <th> 경기수    </th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i<resData.response.length; i++){ %>
+                <tr>
+                    <td style="text-align: left; "> 
+                        <div class="inner">
+                            <div style="float: left;">
+                                <img width="100" height="100" src=<%=resData.response[i].player.photo%> class="emblem">
+                            </div>
+                            <div style="float: right;">
+                                <span><%= resData.response[i].player.name %></span></br>
+                                <span><%= resData.response[i].statistics[0].team.name %></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td> <%= resData.response[i].statistics[0].goals.total === null ? 0 : resData.response[i].statistics[0].goals.total %> </td>
+                    <td> <%= resData.response[i].statistics[0].goals.assists === null ? 0 : resData.response[i].statistics[0].goals.assists %> </td>
+                    <td> <%= resData.response[i].statistics[0].shots.total === null ? 0 : resData.response[i].statistics[0].shots.total %> </td>
+                    <td> <%= resData.response[i].statistics[0].fouls.committed === null ? 0 : resData.response[i].statistics[0].fouls.committed %> </td>
+                    <td> <%= resData.response[i].statistics[0].cards.yellow === null ? 0 : resData.response[i].statistics[0].cards.yellow %> </td>
+                    <td> <%= resData.response[i].statistics[0].cards.red === null ? 0 : resData.response[i].statistics[0].cards.red %> </td>
+                    <td> <%= resData.response[i].statistics[0].shots.on === null ? 0 : resData.response[i].statistics[0].shots.on %> </td>
+                    <td> <%= resData.response[i].statistics[0].games.appearences === null ? 0 : resData.response[i].statistics[0].games.appearences %> </td>
+                </tr>
+            <%}%>
+        </tbody>
+      </table>
+
+    <footer style="background-color:#33cc33; color:#ffffff">
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2021.7.28</h5><h5>김대욱, 최재웅</h5></div>
+                <div class="col-sm-4"><h5>작성자 소개</h5><p>저희는 경희대학교 학생입니다.</p></div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>
